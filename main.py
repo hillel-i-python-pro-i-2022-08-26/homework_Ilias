@@ -1,3 +1,4 @@
+import csv
 import json
 from pathlib import Path
 
@@ -33,6 +34,25 @@ def space_json_reader():
     astronauts = response.text
     reader = json.loads(astronauts)
     return f"All astronauts = {reader['number']}"
+
+
+@app.route('/mean')
+def calculations():
+    weight = 0
+    height = 0
+    dig = 0
+    with open('people_data.csv', 'r', newline='') as csvfile:
+        reading = csv.DictReader(csvfile)
+        for i in reading:
+            weight += float(list(i.values())[2]) * 0.45
+            height += float(list(i.values())[1]) * 2.54
+            dig += 1
+        mid_weight = weight / dig
+        mid_height = height / dig
+        return (
+            f'<li>Middle weight {round(mid_weight, 3)} kg'
+            f'<li>Middle height {round(mid_height, 3)} cm'
+        )
 
 
 @app.route("/")
