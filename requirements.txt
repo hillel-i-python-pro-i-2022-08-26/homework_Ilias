@@ -4,3 +4,5 @@ pre-commit==2.20.0
 black==22.8.0
 flake8==5.0.4
 pyupgrade==2.38.0
+#created for generate names
+faker==14.2.0
