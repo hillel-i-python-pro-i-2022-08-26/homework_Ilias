@@ -1,14 +1,15 @@
 import csv
 import json
-from pathlib import Path
 
 import requests
 from faker import Faker
 from flask import Flask
 
+from application.services.db_tab import table
+from application.settings import path_file
+
 fake = Faker()
 app = Flask(__name__)
-path_file = Path("file.txt")
 
 
 def users():
@@ -64,6 +65,8 @@ def index():
 def file():
     return path_file.read_text()
 
+
+table()
 
 if __name__ == "__main__":
     app.run(debug=True)
