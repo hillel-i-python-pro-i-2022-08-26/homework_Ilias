@@ -14,7 +14,7 @@ path_file = Path("file.txt")
 def users():
     name = fake.first_name()
     mail = f"{str(name.lower())}_@gmail.com"
-    yield f"{name}: {mail}"
+    return f"{name}: {mail}"
 
 
 # route_users_generate_by_number__start
@@ -23,8 +23,7 @@ def users():
 def generated_users(quantity: int = 100):
     num = quantity
     for i in range(num):
-        for name in users():
-            yield f"<p>{i + 1}. {name}</p>"
+        yield f"<p>{i + 1}. {users()}</p>"
 
 
 @app.route('/space')
@@ -50,8 +49,8 @@ def calculations():
         mid_weight = weight / dig
         mid_height = height / dig
         return (
-            f'<li>Middle weight {round(mid_weight, 3)} kg'
-            f'<li>Middle height {round(mid_height, 3)} cm'
+            f'<p>Middle weight {round(mid_weight, 3)} kg</p>'
+            f'<p>Middle height {round(mid_height, 3)} cm</p>'
         )
 
 
