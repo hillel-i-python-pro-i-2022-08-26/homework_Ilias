@@ -1,9 +1,9 @@
-.PHONY: task-i-run
-task-i-run:
+.PHONY: flask-i-run
+flask-i-run:
 	@flask run
 
-.PHONY: task-i-purge
-task-i-purge:
+.PHONY: flask-i-purge
+flask-i-purge:
 	@echo chao chao
 
 .PHONY: init-dev
