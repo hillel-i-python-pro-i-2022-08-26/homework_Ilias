@@ -12,3 +12,8 @@
 * `/mean`
 * `/requirements`
 * `/generate-users`
+* `/delete`
+* `/update`
+* `/unique-user`
+* `/view-users`
+* `/create-users`
