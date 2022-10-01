@@ -141,6 +141,17 @@ def update_user(args, unique_id):
     return 'Update complited'
 
 
+@app.route("/users/delete/<int:unique_id>")
+def delete_user(unique_id):
+    with DbConnection() as connection:
+        with connection:
+            connection.execute("""
+            DELETE FROM phones WHERE phoneID=:unique_id;
+            """, {"unique_id": unique_id
+                  })
+    return 'user has been deleted'
+
+
 @app.route("/requirements")
 def file():
     return path_file.read_text()
