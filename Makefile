@@ -1,10 +1,10 @@
-.PHONY: homework-i-run
-homework-i-run:
+.PHONY: task-i-run
+task-i-run:
 	@flask run
 
-.PHONY: homework-i-purge
-homework-i-purge:
-	@echo end of work
+.PHONY: task-i-purge
+task-i-purge:
+	@echo chao chao
 
 .PHONY: init-dev
 init-dev:
