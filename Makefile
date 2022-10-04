@@ -9,5 +9,5 @@ task-i-purge:
 .PHONY: init-dev
 init-dev:
 	@pip install --upgrade pip && \
-	@pip install --requirement requirements.txt && \
-	@pre-commit install
+	pip install --requirement requirements.txt && \
+	pre-commit install
